@@ -48,6 +48,8 @@
             
         </StackLayout>
         
+        <Button x:Name="btnTrocarParaLista2" Clicked="btnTrocarParaLista2_Clicked" HeightRequest="50" HorizontalOptions="Center" WidthRequest="100" Text="Lista 2" VerticalOptions="End" TranslationY="100"/>
+
     </StackLayout>
 
 </ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppVerbos.Lista2">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <StackLayout
+                Padding="10"
+                BackgroundColor="Aqua"            
+                >
+                <StackLayout.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#92FFC0"
+                                      Offset="0.1"
+                                      />
+                        <GradientStop Color="#002661"
+                                      Offset="0.9"
+                                      />
+                    </LinearGradientBrush>
+                </StackLayout.Background>
+
+                <Label Text="VERBOS IRREGULARES - Lista 2" FontSize="20" HorizontalTextAlignment="Center" TextColor="black"/>
+                <Button Text="Começar!" Clicked="Comecar"/>
+            </StackLayout>
+
+
+            <StackLayout 
+                Padding="20"
+            >
+
+                <Label x:Name="Index_Verbo" FontSize="11"/>
+                <Label x:Name="Mensagem" FontSize="19"/>
+                <StackLayout
+                    Padding="15"   
+                 >
+                </StackLayout>
+
+                <Label Text="Digite o passado simples do verbo"/>
+                <Entry x:Name="Input_Past"/>
+
+                <Label Text="Digite o particípio do verbo"/>
+                <Entry x:Name="Input_Participle"/>
+                <Button Text="Confirmar" Clicked="Button_Clicked"/>
+
+                <Label x:Name="Resultado_Past"/>
+                <Label x:Name="Resultado_Participle"/>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

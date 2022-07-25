@@ -14,9 +14,10 @@ namespace AppVerbos
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        List<Verb> lista_verbos = new List<Verb>()
+        List<Verb> lista1_verbos = new List<Verb>()
         {
             new Verb("arise")
             {
@@ -360,22 +361,22 @@ namespace AppVerbos
 
             int i = int.Parse(Index_Verbo.Text);
 
-            if(past == lista_verbos[i].past_tense)
+            if(past == lista1_verbos[i].past_tense)
             {
                 Resultado_Past.Text = "O Passado simples " + past + " está correto!";
             }
             else
             {
-                Resultado_Past.Text = "O Passado simples " + past + " está incorreto!, o correto seria: " + lista_verbos[i].past_tense;
+                Resultado_Past.Text = "O Passado simples " + past + " está incorreto!, o correto seria: " + lista1_verbos[i].past_tense;
             }
 
-            if (participle == lista_verbos[i].past_participle)
+            if (participle == lista1_verbos[i].past_participle)
             {
                 Resultado_Participle.Text = "O Particípio " + participle + " está correto!";
             }
             else
             {
-                Resultado_Participle.Text = "O Particípio  " + participle + " está incorreto!, o correto seria: " + lista_verbos[i].past_participle;
+                Resultado_Participle.Text = "O Particípio  " + participle + " está incorreto!, o correto seria: " + lista1_verbos[i].past_participle;
             }
 
         }
@@ -391,7 +392,7 @@ namespace AppVerbos
 
             int i = num.Next(0, 48);
 
-            string msg = "Qual o passado simples e o participio do verbo to " + lista_verbos[i].nome + "(" + lista_verbos[i].traducao + ")?";
+            string msg = "Qual o passado simples e o participio do verbo to " + lista1_verbos[i].nome + "(" + lista1_verbos[i].traducao + ")?";
 
             Mensagem.Text = msg;
             Input_Participle.Text = "";
@@ -399,6 +400,18 @@ namespace AppVerbos
             Resultado_Participle.Text = "";
             Resultado_Past.Text = "";
             Index_Verbo.Text = i.ToString();
+        }
+
+        private void btnTrocarParaLista2_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Navigation.PushAsync(new Lista2());
+
+            }catch(Exception ex)
+            {
+                DisplayAlert("ERRO", ex.Message, "OK");
+            }
         }
     }
 
